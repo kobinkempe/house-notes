@@ -11,6 +11,7 @@ Thumbs.db
 .next/
 .vinext/
 dist/
+public-demo-dist/
 work/
 *.log
 .codex-remote-attachments/

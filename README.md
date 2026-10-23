@@ -1,5 +1,9 @@
 # House Notes
 
+## Public demo
+
+[Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/house-notes/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/house-notes/)
+
 A home-design notebook that turns scattered inspiration and AI-generated suggestions into an organized collection of ideas you choose to keep.
 
 ![House Notes with synthetic saved ideas](docs/screenshots/desktop.jpg)
@@ -17,7 +21,7 @@ npm ci
 npm run dev:demo
 ```
 
-Open http://127.0.0.1:4312. This mounts the real React interface using neutral saved examples and the source-controlled brainstorm library. API responses are simulated locally; mutations are rejected. No production account, API key, database or uploaded photos are needed.
+Open http://127.0.0.1:4312. This mounts the real React interface using neutral saved examples and the source-controlled brainstorm library. API responses and changes are handled in browser memory; refresh resets the demo. No production account, API key, database or uploaded photos are needed.
 
 ## The AI workflow
 
@@ -47,7 +51,7 @@ npm test
 npm run lint
 ```
 
-The build and nine existing tests cover rendering, owner access, protected routes, share metadata and the import contract. Lint currently has two image-optimization warnings and no errors. Persistent notebook behavior requires the intended D1/R2 environment; the read-only demo does not verify those integrations.
+The build and nine existing tests cover rendering, owner access, protected routes, share metadata and the import contract. Lint currently has two image-optimization warnings and no errors. Persistent notebook behavior requires the intended D1/R2 environment; the browser-only demo does not verify those integrations.
 
 ## Portfolio scope
 

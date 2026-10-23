@@ -109,7 +109,7 @@ const IDEA_GROUPS: Array<{ id: string; label: string; categories: string[] }> = 
   },
 ];
 
-export default function HouseNotes() {
+export default function HouseNotes({ demoMode = false, assetBase = "/" }: { demoMode?: boolean; assetBase?: string }) {
   const [ideas, setIdeas] = useState<IdeaRecord[]>(seedRecords);
   const [images, setImages] = useState<InspirationImage[]>([]);
   const [links, setLinks] = useState<InspirationLink[]>([]);
@@ -124,7 +124,7 @@ export default function HouseNotes() {
   const [showBatchImport, setShowBatchImport] = useState(false);
 
   useEffect(() => {
-    if ("serviceWorker" in navigator) {
+    if (!demoMode && "serviceWorker" in navigator) {
       navigator.serviceWorker.register("/sw.js", { updateViaCache: "none" }).catch(() => undefined);
     }
 
@@ -151,7 +151,7 @@ export default function HouseNotes() {
       window.history.replaceState({}, "", params.get("view") === "images" ? "/?view=images" : "/");
     }
     return () => window.clearTimeout(shareUpdate);
-  }, []);
+  }, [demoMode]);
 
   useEffect(() => {
     const captureInstallPrompt = (event: Event) => {
@@ -316,7 +316,7 @@ export default function HouseNotes() {
         <div className="topbar-actions">
           {installPrompt && <button className="install-app-button" onClick={installApp}>Install app</button>}
           <div className={`sync-status ${isSyncing ? "is-syncing" : ""}`} aria-live="polite">
-            <i /> {isSyncing ? "Opening your book" : "Saved privately"}
+            <i /> {isSyncing ? "Opening your book" : demoMode ? "Browser demo" : "Saved privately"}
           </div>
         </div>
       </header>
@@ -409,6 +409,8 @@ export default function HouseNotes() {
           setLinks={setLinks}
           setNotice={setNotice}
           onGenerate={() => setGenerationMode("images")}
+          assetBase={assetBase}
+          demoMode={demoMode}
         />
       )}
 
@@ -872,6 +874,8 @@ function ImagesView({
   setLinks,
   setNotice,
   onGenerate,
+  assetBase,
+  demoMode,
 }: {
   images: InspirationImage[];
   setImages: React.Dispatch<React.SetStateAction<InspirationImage[]>>;
@@ -879,6 +883,8 @@ function ImagesView({
   setLinks: React.Dispatch<React.SetStateAction<InspirationLink[]>>;
   setNotice: (message: string) => void;
   onGenerate: () => void;
+  assetBase: string;
+  demoMode: boolean;
 }) {
   const fileInput = useRef<HTMLInputElement>(null);
   const [dragging, setDragging] = useState(false);
@@ -954,7 +960,7 @@ function ImagesView({
         <aside className="chatgpt-image-tip">
           <span aria-hidden="true">↗</span>
           <div>
-            <p><strong>Found something on Android?</strong> Tap Share, then choose House Notes. Images and web links will be added here automatically.</p>
+            <p>{demoMode ? <><strong>Try the gallery in this tab.</strong> Selected images stay in browser memory and disappear on refresh. Android sharing is part of the private installed application.</> : <><strong>Found something on Android?</strong> Tap Share, then choose House Notes. Images and web links will be added here automatically.</>}</p>
             <button type="button" onClick={onGenerate}><span aria-hidden="true">✦</span> Generate images with ChatGPT</button>
           </div>
         </aside>
@@ -1015,8 +1021,8 @@ function ImagesView({
         </div>
         <div className={`gallery-grid gallery-density-${galleryDensity}`}>
           <figure>
-            <a href="/house-notes-inspiration.png" target="_blank" rel="noreferrer">
-              <img src="/house-notes-inspiration.png" alt="Four architectural studies: a kitchen garden, double-height room, hidden under-stair playroom, and outdoor bath" />
+            <a href={`${assetBase}house-notes-inspiration.png`} target="_blank" rel="noreferrer">
+              <img src={`${assetBase}house-notes-inspiration.png`} alt="Four architectural studies: a kitchen garden, double-height room, hidden under-stair playroom, and outdoor bath" />
             </a>
             <figcaption><span>First House Notes studies</span><em>Built in</em></figcaption>
           </figure>

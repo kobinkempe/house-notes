@@ -6,4 +6,9 @@ export default defineConfig({
   publicDir: fileURLToPath(new URL("../public", import.meta.url)),
   resolve: { alias: { "@": fileURLToPath(new URL("..", import.meta.url)) } },
   plugins: [react()],
+  base: process.env.PORTFOLIO_PUBLIC_BASE || "/",
+  build: {
+    outDir: process.env.PORTFOLIO_OUTPUT_DIR || "../public-demo-dist",
+    emptyOutDir: false,
+  },
 });

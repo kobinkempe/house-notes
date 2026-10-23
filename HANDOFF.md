@@ -1,6 +1,6 @@
 # House Notes portfolio handoff
 
-This is a sanitized source snapshot with an isolated read-only demo. Read AGENTS.md before editing. New brainstormed ideas must be `candidate`; only explicit user action saves them.
+This is a sanitized source snapshot with an isolated browser-only demo. Read AGENTS.md before editing. New brainstormed ideas must be `candidate`; only explicit user action saves them.
 
 ## Where the data lives
 
@@ -12,7 +12,7 @@ The authenticated app expects a trusted host to supply verified account headers.
 
 ## Import AI batch
 
-Use docs/idea-batch.example.json. The importer validates its input and places valid new records in Browse ideas with candidate status. It must not auto-save brainstorms. The demo shows the import dialog but rejects writes.
+Use docs/idea-batch.example.json. The importer validates its input and places valid new records in Browse ideas with candidate status. It must not auto-save brainstorms. The demo supports validated imports and explicit saving in browser memory, without contacting a server or the production notebook.
 
 ## Local review
 
