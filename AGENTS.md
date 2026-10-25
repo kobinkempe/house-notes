@@ -1,6 +1,6 @@
 # House Notes agent instructions
 
-Read `HANDOFF.md` before changing this project.
+Read `docs/DEPLOYMENT.md` before changing this project.
 
 - Preserve owner-only authorization for the notebook and every data route.
 - New brainstormed ideas must be `candidate` Browse ideas, never automatically `saved`.

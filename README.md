@@ -48,7 +48,7 @@ An optional **Import AI batch** flow accepts suggestions from an external model 
 - Android web-app manifest and share target for capturing inspiration.
 - `INSERT OR IGNORE` seed insertion preserves existing records.
 
-The portfolio copy replaces the owner email and site origin with reserved example values. The isolated demo lives in `demo/`; the authenticated app remains in `app/`. See [HANDOFF.md](HANDOFF.md) before adapting it to a host. Request headers are trusted only behind the intended authenticated hosting boundary; this is not a standalone authentication service.
+The isolated demo lives in `demo/`; the authenticated app remains in `app/`. The owner email and site origin use reserved example values. See [deployment setup](docs/DEPLOYMENT.md) to configure your own instance. Request headers are trusted only behind the intended authenticated hosting boundary; this is not a standalone authentication service.
 
 ## Verify
 
@@ -61,4 +61,4 @@ The build and nine existing tests cover rendering, owner access, protected route
 
 ## Portfolio scope
 
-Product design for everyday use, phone capture and browsing, editable notes, access control, and persistence boundaries. Built with AI assistance; this repository does not claim model training or evaluated model accuracy. Production notes, links, uploads, environment files and deployment identifiers are excluded. [Publication review](PUBLICATION_REVIEW.md).
+Product design for everyday use, phone capture and browsing, editable notes, access control, and persistence boundaries. Built with AI assistance; this repository does not claim model training or evaluated model accuracy. Production notes, links, uploads, environment files and deployment identifiers are excluded.
