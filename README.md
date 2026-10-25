@@ -1,10 +1,14 @@
 # House Notes
 
+**A home-design notebook for turning scattered inspiration and AI brainstorms into ideas I can find, review and deliberately choose to keep.**
+
+I wanted a place to collect possibilities for a future home with the context that makes them useful later: what the idea is, where it belongs and why it matters. House Notes organizes that material and keeps a pool of suggestions separate from the collection I have chosen.
+
+AI can supply a large structured brainstorm through the JSON import. Every suggestion enters **Browse ideas** as an unsaved candidate; saving it to **My ideas** remains a human choice. The public demo lets you explore that workflow with synthetic examples and temporary browser-memory changes.
+
 ## Public demo
 
 [Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/house-notes/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/house-notes/)
-
-A home-design notebook that turns scattered inspiration and AI-generated suggestions into an organized collection of ideas you choose to keep.
 
 ![House Notes with synthetic saved ideas](docs/screenshots/desktop.jpg)
 
