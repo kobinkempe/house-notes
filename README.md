@@ -1,10 +1,19 @@
 # House Notes
 
-**A home-design notebook for turning scattered inspiration and AI brainstorms into ideas I can find, review and deliberately choose to keep.**
+**Use AI to build a useful, everyday tool.**
 
-I wanted a place to collect possibilities for a future home with the context that makes them useful later: what the idea is, where it belongs and why it matters. House Notes organizes that material and keeps a pool of suggestions separate from the collection I have chosen.
+I wanted a convenient place to keep inspiration for a home, so I used AI to build one. Now I use House Notes: a small notebook for photos, links, ideas and the notes that make them useful later. The goal was a tool that fits naturally into my day, especially on my phone.
 
-AI can supply a large structured brainstorm through the JSON import. Every suggestion enters **Browse ideas** as an unsaved candidate; saving it to **My ideas** remains a human choice. The public demo lets you explore that workflow with synthetic examples and temporary browser-memory changes.
+## What makes it useful
+
+- **Capture inspiration wherever I find it.** The installed Android web app accepts photos and web links through another app’s Share menu.
+- **Open it from my home screen.** The private app installs as a standalone web app.
+- **Add a new idea quickly.** Give it a title, choose a category and add an optional note.
+- **Keep the collection organized.** Ideas appear grouped by category automatically; search and filters narrow the list.
+- **Browse comfortably on a phone.** Compact rows expand for detail, and the gallery has adjustable image sizes.
+- **Remember the detail that mattered.** Add and edit notes alongside ideas.
+
+The category comes from the idea’s chosen category; this is not a claim that a model classifies every photo. Sharing means sharing *into* my private notebook, rather than publishing the notebook to other people.
 
 ## Public demo
 
@@ -12,11 +21,9 @@ AI can supply a large structured brainstorm through the JSON import. Every sugge
 
 ![House Notes with synthetic saved ideas](docs/screenshots/desktop.jpg)
 
-## Why I built it
+Try adding an idea and a note, opening a category, and changing the gallery size. The demo uses neutral saved examples and holds changes in browser memory; refresh resets it. Phone installation, Android sharing and persistent storage are features of the private installed app. The demo has no connection to my production notebook and includes none of its photos, links or notes.
 
-Collecting ideas is easy; preserving context and deciding what belongs in a future home is harder. House Notes keeps a deliberate boundary between unsaved suggestions and personal decisions. AI-generated batches enter **Browse ideas** as candidates. Only a human action moves an idea into **My ideas**.
-
-## Try the portfolio demo
+## Run the portfolio demo
 
 Requires Node.js 22.13+ and npm.
 
@@ -25,18 +32,13 @@ npm ci
 npm run dev:demo
 ```
 
-Open http://127.0.0.1:4312. This mounts the real React interface using neutral saved examples and the source-controlled brainstorm library. API responses and changes are handled in browser memory; refresh resets the demo. No production account, API key, database or uploaded photos are needed.
+Open http://127.0.0.1:4312. The real React interface runs with in-memory API responses. No production account, API key, database or uploaded photos are needed.
 
-## The AI workflow
+## Where AI fits
 
-1. Ask ChatGPT or another model for JSON matching [the batch contract](docs/idea-batch.example.json).
-2. Paste it into **Import AI batch**.
-3. The authenticated application validates categories and fields and skips duplicate titles.
-4. Imported records remain candidates until explicitly saved.
+I defined the everyday need and reviewed the experience. AI assisted implementation of the responsive interface, capture flows, persistence and access controls. This is an example of using AI to create a useful personal tool, rather than adding a model call to every interaction.
 
-![Structured AI batch import](docs/screenshots/ai-import.jpg)
-
-The application uses an explicit handoff to an external AI. It does not embed a model API or automatically transmit the private notebook to a model.
+An optional **Import AI batch** flow accepts suggestions from an external model using [the JSON batch contract](docs/idea-batch.example.json). The importer checks fields and categories, skips duplicate titles, and puts suggestions in **Browse ideas**. A person explicitly saves an idea to **My ideas**. The app does not embed a model API or automatically send the private notebook to a model.
 
 ## Architecture and engineering decisions
 
@@ -59,4 +61,4 @@ The build and nine existing tests cover rendering, owner access, protected route
 
 ## Portfolio scope
 
-Product design, a reviewable AI-to-application contract, access control, persistence boundaries, and responsive UI. Built with AI assistance; this repository does not claim model training or evaluated model accuracy. Production notes, links, uploads, environment files and deployment identifiers are excluded. [Publication review](PUBLICATION_REVIEW.md).
+Product design for everyday use, phone capture and browsing, editable notes, access control, and persistence boundaries. Built with AI assistance; this repository does not claim model training or evaluated model accuracy. Production notes, links, uploads, environment files and deployment identifiers are excluded. [Publication review](PUBLICATION_REVIEW.md).
