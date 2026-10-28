@@ -1,6 +1,6 @@
 # House Notes
 
-**Use AI to build a useful, everyday tool.**
+**A home-ideas notebook that lives on my phone.**
 
 I wanted a convenient place to keep inspiration for a home, so I used AI to build one. Now I use House Notes: a small notebook for photos, links, ideas and the notes that make them useful later. The goal was a tool that fits naturally into my day, especially on my phone.
 
@@ -17,11 +17,11 @@ The category comes from the idea’s chosen category; this is not a claim that a
 
 ## Public demo
 
-[Open the live demo](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/house-notes/) · [Read the case study](https://kobin-ai-portfolio.kobinkempe.chatgpt.site/case-studies/house-notes/)
+[Open the live demo](https://kobinkempe.pages.dev/house-notes/) · [Read the case study](https://kobinkempe.pages.dev/case-studies/house-notes/)
 
-![House Notes with synthetic saved ideas](docs/screenshots/desktop.jpg)
+![House Notes with example ideas](docs/screenshots/desktop.jpg)
 
-Try adding an idea and a note, opening a category, and changing the gallery size. The demo uses neutral saved examples and holds changes in browser memory; refresh resets it. Phone installation, Android sharing and persistent storage are features of the private installed app. The demo has no connection to my production notebook and includes none of its photos, links or notes.
+Try adding an idea and a note, opening a category, and changing the gallery size. The demo uses example ideas and holds changes in browser memory; refresh resets it. Phone installation, Android sharing and persistent storage are features of the private installed app. The demo has no connection to my production notebook and includes none of its photos, links or notes.
 
 ## Run the portfolio demo
 
@@ -57,7 +57,7 @@ npm test
 npm run lint
 ```
 
-The build and nine existing tests cover rendering, owner access, protected routes, share metadata and the import contract. Lint currently has two image-optimization warnings and no errors. Persistent notebook behavior requires the intended D1/R2 environment; the browser-only demo does not verify those integrations.
+The build and nine tests cover rendering, owner access, protected routes, share metadata and the import contract. Lint currently has two image-optimization warnings and no errors. Persistent notebook behavior requires the intended D1/R2 environment; the browser-only demo does not verify those integrations.
 
 ## Portfolio scope
 
