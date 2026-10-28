@@ -17,7 +17,7 @@ The category comes from the idea’s chosen category; this is not a claim that a
 
 ## Public demo
 
-[Open the live demo](https://kobinkempe.pages.dev/house-notes/) · [Read the case study](https://kobinkempe.pages.dev/case-studies/house-notes/)
+[Open the live demo](https://kobinkempe.pages.dev/house-notes/) · [See project details](https://kobinkempe.pages.dev/projects/house-notes/)
 
 ![House Notes with example ideas](docs/screenshots/desktop.jpg)
 
